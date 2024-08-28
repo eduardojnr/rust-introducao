@@ -1,3 +1,5 @@
+// Anotações até a aula 5
+
 // Para compilar --> rustc <path>\main.rs
 // Para executar --> <path>\main
 
@@ -10,6 +12,17 @@
 
 // É obrigatória a existência de uma função 'entrypoint' 
 
+// fn <nome>(<argumento>: <tipo do argumento>) -> <tipo do retorno> {} --> snake_case
+
+
+// Importação de funções e métodos externos
+// use <biblioteca>::<modulo>; --> para importar bibliotecas externas
+// Ex.: use std::io; --> standard::io
+
+
+// Input de usuário
+// use std::io;
+// io::stdin()
 
 // É possível iniciar um novo escopo (para variáveis por exemplo)
 // basta deixar o código desejado dentro de um bloco de chaves {}
@@ -21,6 +34,7 @@
 // let <nome_da_variavel> = <conteúdo>_<tipo>;
 // let mut [...];  --> mutável
 // const <NOME_DA_CONSTANTE>: <tipo> = <conteúdo>  --> SCREAMING_SNAKE_CASE
+// static <nome_da_variavel>:: <tipo> = <conteúdo> --> Alocada na memória Static do SO | Acesso mais rápido
 
 
 // Tipos primitivos e suas declarações
@@ -42,7 +56,18 @@
 
     // char --> dentro de aspas simples | caracter de até 4 bytes
 
-    // &str --> dentro de aspas duplas
+    // &str --> dentro de aspas duplas | tamanho fixo
+        // # para criar um variável de tamanho dinâmico que receba texto:
+        // let <nome_da_variável> = String::new();
+        // # para adicionar conteúdo:
+        // <nome_da_variável>.push_str("<conteúdo>");
+        //      OU
+        // let <nome_da_variável> = "<conteúdo>".to_string();
+        //      OU
+        // let <nome_da_variável> = String::from("<conteúdo>");
+        //      OU
+        // let <nome_da_variável>: String = "<conteúdo>".into();
+
     
 // Compostos
     // tuple --> permite armazenamento de vários tipos | tamanho fixo
@@ -53,3 +78,12 @@
     // array --> tipo definido | tamanho fixo | utiliza colchetes
         // let <array>: [i32;6] = [5, 10, 15, 20, 25];
         // para acessar o conteúdo de um index --> <array>.[<index>]
+
+    // vetor -->
+        // let <nome>: Vec<tipo> = <conteúdo>;
+
+
+//Memórias STATIC | STACK | HEAP
+    // STATIC --> Acesso mais rápido | Tamanho Fixo | Dura o programa todo | Limpeza quando o programa termina
+    // STACK --> Variáveis de tipos primitivos | Tamanho fixo
+    // HEAP --> Para situações com tamanhos dinâmicos (Ex.: Consulta de API, Banco de Dados etc.)
